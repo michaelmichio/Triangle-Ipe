@@ -9,7 +9,6 @@ public class Vector2 {
 
     @Override
     public String toString() {
-        String result = x + " " + y;
-        return result;
+        return x + " " + y;
     }
 }

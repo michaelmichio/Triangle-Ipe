@@ -3,18 +3,18 @@ public class Main {
     public static void main(String[] args) {
         if(args.length == 3) {
             ArrayList<Vector2> vectors = new ArrayList<>();
-            for(int i = 0; i < args.length; i++) {
+            for(String arg : args) {
                 try {
-                    String[] strVector = args[i].split(",");
+                    String[] strVector = arg.split(",");
                     vectors.add(new Vector2(Integer.parseInt(strVector[0]), Integer.parseInt(strVector[1])));
                 } catch (Exception e) {
-                    System.out.println(e);
+                    throw new RuntimeException(e);
                 }
             }
 
             if(vectors.size() == args.length) {
                 TriangleIPE triangleIPE = new TriangleIPE(vectors);
-                triangleIPE.printPDF();
+                triangleIPE.printResultAsIpe();
             }
             else {
                 System.out.println("Invalid value.");
